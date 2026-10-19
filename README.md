@@ -6,7 +6,7 @@
 - **Affiliation (research):** Summer Research Intern, Indian Institute of Management Ahmedabad
 - **Supervisor:** Prof. Namrata Chindarkar, JSW School of Public Policy, IIM Ahmedabad
 - **Version:** August 18, 2026
-- **Contact:** `[ADD EMAIL]` · `[ADD LinkedIn / personal website]`
+- **Contact:** `srijayalakshmi.v@ahduni.edu.in` · `(https://sites.google.com/view/srijayalakshmi/)`
 
 > **Status:** Writing sample. The paper is a correlational analysis, not a causal design.
 
