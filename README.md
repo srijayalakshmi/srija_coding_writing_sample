@@ -6,7 +6,7 @@
 - **Affiliation (research):** Summer Research Intern, Indian Institute of Management Ahmedabad
 - **Supervisor:** Prof. Namrata Chindarkar, JSW School of Public Policy, IIM Ahmedabad
 - **Version:** August 18, 2026
-- **Contact:** `srijayalakshmi.v@ahduni.edu.in` · `(https://sites.google.com/view/srijayalakshmi/)`
+- **Contact:** [srijayalakshmi.v@ahduni.edu.in](srijayalakshmi.v@ahduni.edu.in) · [https://sites.google.com/view/srijayalakshmi](https://sites.google.com/view/srijayalakshmi/)
 
 > **Status:** Writing sample. The paper is a correlational analysis, not a causal design.
 
@@ -43,7 +43,7 @@ It combines CMIE's Industry Outlook macro series, wave- and industry-matched to 
 |---|---|---|
 | (1) | One-way FE: lagged CPI, WPI input cost, industry-matched IIP growth, industry-matched credit growth + controls, broad-industry FE, industry × wave trend, individual FE | Main |
 | (2) | Two-way FE: Eq. (1) + wave FE | Main |
-| (3) | Lagged BIES measures (Q1 margin balance, Q2 sales balance, Q3 backward cost change, Q4 forward cost expectation, Q5 CPI expectation) vs. lagged CMIE proxies, two-way FE. **[VERIFY: wave FE are included in the code, but the paper text says they are omitted for the BIES track]** | BIES-Manufacturing |
+| (3) | Lagged BIES measures (Q1 margin balance, Q2 sales balance, Q3 backward cost change, Q4 forward cost expectation, Q5 CPI expectation) vs. lagged CMIE proxies, two-way FE | BIES-Manufacturing |
 | (4) | Leads-and-lags placebo test: one-wave lags and leads of macro variables | Main and BIES-Manufacturing |
 
 **Samples**
