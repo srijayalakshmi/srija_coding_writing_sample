@@ -10,7 +10,7 @@
 
 > **Status:** Writing sample. The paper is a correlational analysis, not a causal design.
 
-📄 **Paper (PDF):** [`paper/srija_writing_sample.pdf`](paper/srija_writing_sample.pdf) → **[ADD PATH: location of the PDF inside the repo, e.g. `paper/srija_writing_sample.pdf`]**
+📄 **Paper (PDF):** [srija_writing_sample.pdf](srija_writing_sample.pdf) → **[srija_writing_sample.pdf]**
 
 ---
 
