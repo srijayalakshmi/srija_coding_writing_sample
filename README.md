@@ -61,19 +61,11 @@ It combines CMIE's Industry Outlook macro series, wave- and industry-matched to 
 
 **The data are proprietary and are not included in this repository.** CMIE data require a licence from [CMIE](https://www.cmie.com). BIES data are subject to the terms of the Misra Centre, IIM Ahmedabad.
 
-**Wave-to-date mapping:** three waves per calendar year; wave 25 = Jan–Apr 2022, wave 28 = Jan–Apr 2023, wave 37 = Jan–Apr 2026. The estimation window is therefore waves **25–37** (Jan 2022 – Apr 2026). *(The PDF text and Figure 1 caption say 25–39; see `docs/ERRATA.md`.)*
+**Wave-to-date mapping:** three waves per calendar year; wave 25 = Jan–Apr 2022, wave 28 = Jan–Apr 2023, wave 37 = Jan–Apr 2026. The estimation window is therefore waves **25–37** (Jan 2022 – Apr 2026).
 
-### Expected input files
+Panel construction and merge code (CPHS × CMIE Industry Outlook × BIES) is a part of this repository → **[data_cleaning.do]**.
 
-Place these in the data folder → **[ADD PATH: data folder, e.g. `data/`]**
-
-| File | Used by | Path to add |
-|---|---|---|
-| `Analysis_Panel.csv` | `trend_analysis.R` | **[ADD PATH]** |
-| `Analysis_Panel.dta` | `analysis_3_writing_sample.do` (Part 1) | **[ADD PATH]** |
-| `CPHS_BIES_comparison.dta` | `analysis_3_writing_sample.do` (Part 2) | **[ADD PATH]** |
-
-Panel construction and merge code (CPHS × CMIE Industry Outlook × BIES) is not part of this repository → **[ADD PATH: folder for the cleaning/merge scripts, e.g. `code/00_build_panel/`, or remove this line]**.
+To download CMIE data, please log onto CMIE from your institutional ID. NIC data is avaialble freely.
 
 Variable definitions are in Appendix Table 7 of the paper (`MEM_PANEL_ID`, `WAVE_NO`, `EARNING_MEMBER`, `INDUSTRY_SWITCH`, `BROAD_INDUSTRY_NAME`, `INF_CPI`, `WPI_INPUT`, `IIP_INDUSTRY`, `CREDIT_INDUSTRY`, the `L_*` lags, `has_bies`, `NIC_DIV_CODE`, and the `L1_q*` BIES lags).
 
@@ -86,18 +78,14 @@ Variable definitions are in Appendix Table 7 of the paper (`MEM_PANEL_ID`, `WAVE
 ├── LICENSE
 ├── paper/
 │   └── srija_writing_sample.pdf
-├── docs/
-│   └── ERRATA.md                         # reconciliation of PDF vs. code output
 ├── code/
-│   ├── trend_analysis.R                  # Figures 1-2 (R)
-│   └── analysis_3_writing_sample.do      # Tables 1-6 (Stata)
-├── data/                                 # NOT tracked (proprietary)
+├── ├── data_cleaning.do
+│   ├── analysis_2.R                  # Figures 1-2 (R)
+│   └── analysis_1.do      # Tables 1-6 (Stata)
 └── output/
     ├── figures/
     └── tables/
 ```
-
-**[ADD PATH: confirm each folder above matches your actual repo layout]**
 
 ## Mapping code to paper
 
@@ -132,46 +120,6 @@ install.packages(c("data.table", "ggplot2", "scales"))
 ```stata
 ssc install estout, replace   // provides eststo, esttab, estpost
 ```
-
-## How to reproduce
-
-1. **Clone**
-   ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
-   cd <repo-name>
-   ```
-   **[ADD: your GitHub username and repository name]**
-2. **Add data** to the data folder (see [Expected input files](#expected-input-files)).
-3. **Set paths.** Both scripts currently contain absolute paths from the author's machine. Edit them to relative paths:
-
-   | Script | Variable | Change to | Path to add |
-   |---|---|---|---|
-   | `trend_analysis.R` | `panel_path` | `"data/Analysis_Panel.csv"` | **[ADD PATH]** |
-   | `trend_analysis.R` | `out_dir` | `"output/figures"` | **[ADD PATH]** |
-   | `analysis_3_writing_sample.do` | `global PANEL` | `"data"` | **[ADD PATH]** |
-   | `analysis_3_writing_sample.do` | `global TEX_OUT` | `"output/tables"` | **[ADD PATH]** |
-
-4. **Figures (R)** from the repo root:
-   ```bash
-   Rscript code/trend_analysis.R
-   ```
-5. **Tables (Stata)** from the repo root:
-   ```stata
-   cd "<ADD PATH: full path to repo root>"
-   do "code/analysis_3_writing_sample.do"
-   ```
-
-The two scripts are independent and can be run in either order.
-
-## Verification notes
-
-The `.tex` files produced by the do-file are the authoritative source for all estimates. Several numbers quoted in the PDF's running text differ from the tables, and a few specification details differ between paper and code. These are listed with locations in **[ADD PATH: `docs/ERRATA.md`]** and should be resolved before the PDF is treated as final.
-
-## Limitations (as stated in the paper)
-
-1. The outcome is the **undirected** industry-switch indicator; upward/downward mobility outcomes are defined in the Appendix but not estimated.
-2. The BIES-Manufacturing Sample is small, and BIES regressors vary only at the wave level and are merged by industry rather than firm, which may attenuate any true firm-level expectations effect. A firm-to-worker linkage or exogenous variation in expectations is needed to separate a weak channel from an aggregation artefact.
-3. Heterogeneity by gender and rural/urban location, and the financial-inclusion buffer variables, are constructed but not yet in the reported specifications.
 
 ## Citation
 
