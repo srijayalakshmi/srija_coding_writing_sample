@@ -2,8 +2,8 @@ clear all
 set more off
 macro drop _all
 
-global PANEL    "D:\Srijayalakshmi\WORK\SIP 2026\Panels"
-global TEX_OUT  "D:\Srijayalakshmi\STUDY\PhD 2027\Writing Sample\Analysis\Tables_TEX"
+global PANEL    "Panels"
+global TEX_OUT  "Analysis\Tables_TEX"
 cap mkdir "$TEX_OUT"
 
 local controls_note "Individual controls (estimated, not reported): AGE_YRS (age, years), AGE2 (age squared), EDU_NUM (education, 0=illiterate to 9=postgraduate), MARRIED (currently married), BANK_ACC (has bank account), PF_COV (provident fund coverage), HEALTH_INS (health insurance), MOBILE_ACC (mobile phone access), RELATION_NUM (relationship-to-household-head dummies), WORK_PLACE_NUM (place-of-work dummies). Source: CMIE CPHS."
