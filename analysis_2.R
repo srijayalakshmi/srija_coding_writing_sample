@@ -2,8 +2,8 @@ library(data.table)
 library(ggplot2)
 library(scales)
 
-panel_path <- "D:/Srijayalakshmi/WORK/SIP 2026/Panels/Analysis_Panel.csv"
-out_dir    <- "D:/Srijayalakshmi/STUDY/PhD 2027/Writing Sample/Analysis/Data_Trend_Analysis"
+panel_path <- "Panels/Analysis_Panel.csv"
+out_dir    <- "Analysis/Data_Trend_Analysis"
 if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
 
 df <- fread(normalizePath(panel_path))
